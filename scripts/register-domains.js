@@ -114,7 +114,7 @@ const registerDomains = async ({ getDomains, log = () => {} }) => {
   newDomainToAdd.map((newRecords) => {
     promises.push(
       axios.post(
-        "https://api.netlify.com/api/v1/dns_zones/6029004f25e9037d27fc9895/dns_records",
+        "https://api.netlify.com/api/v1/dns_zones/60300101cb9bec00e7cb9c03/dns_records",
         newRecords,
         {
           headers: {

@@ -26,7 +26,7 @@ const toHostList = R.chain((data) => {
 
 const getOldRecord = async () => {
   const oldRecords = await axios.get(
-    "https://api.netlify.com/api/v1/dns_zones/6029004f25e9037d27fc9895/dns_records",
+    "https://api.netlify.com/api/v1/dns_zones/60300101cb9bec00e7cb9c03/dns_records",
     {
       headers: {
         Authorization: process.env.API_TOKEN,
@@ -46,10 +46,7 @@ const getOldRecord = async () => {
     );
 };
 
-const registerDomains = async ({
-  getDomains,
-  log = () => {},
-}) => {
+const registerDomains = async ({ getDomains, log = () => {} }) => {
   const domains = await getDomains().then(toHostList);
   if (domains.length === 0)
     return Promise.reject(new Error("Nothing to register"));

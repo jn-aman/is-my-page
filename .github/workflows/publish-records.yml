@@ -1,0 +1,26 @@
+name: Publish records
+
+on:
+  workflow_dispatch:
+    name: 'Publish records'
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: install --ignore-engines
+      - name: Running tests
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: test
+      - name: Publishing records
+        env:
+          CI: 0
+          ENV: production
+          API_TOKEN: ${{ secrets.API_TOKEN }}
+        uses: borales/actions-yarn@v2.0.0
+        with:
+          cmd: publish-records

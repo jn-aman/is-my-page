@@ -1,0 +1,32 @@
+{
+  "name": "is-my-page-core",
+  "version": "1.0.0",
+  "description": "Register *.is-my.page domains for free",
+  "scripts": {
+    "test": "ENV=test jest",
+    "lint": "eslint utils scripts domains --ext .json,.js",
+    "publish-records": "node ./scripts/register-domains.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jn-aman/is-my-page"
+  },
+  "keywords": [
+    "subdomain"
+  ],
+  "author": "Aman Jain <aman.j@safepath.ai>",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "axios": "^0.21.1",
+    "dotenv": "^8.2.0",
+    "jest": "^26.4.2",
+    "node-fetch": "^2.6.1",
+    "qs": "^6.9.4",
+    "ramda": "^0.27.1"
+  },
+  "devDependencies": {
+    "eslint": "^7.11.0",
+    "eslint-plugin-json": "^2.1.2",
+    "eslint-plugin-node": "^11.1.0"
+  }
+}
